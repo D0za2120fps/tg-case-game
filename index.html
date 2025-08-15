@@ -5,12 +5,22 @@
 <title>Игра с кейсами</title>
 </head>
 <body>
-<h1>Добро пожаловать в игру!</h1>
+<h1>Добро пожаловать в игру с кейсами!</h1>
 <button id="open-case">Открыть кейс</button>
 <div id="result"></div>
+
+<!-- Telegram Web App -->
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
+  const tg = window.Telegram.WebApp;
+  tg.expand(); // Развернуть Web App на весь экран
+
+  // Информация о пользователе
+  console.log("Пользователь:", tg.initDataUnsafe.user);
+
+  // Кнопка открытия кейса
   document.getElementById('open-case').addEventListener('click', () => {
-    const gifts = ["Подарок 1", "Подарок 2", "Подарок 3"];
+    const gifts = ["Подарок 1", "Подарок 2", "Подарок 3", "NFT"];
     const randomGift = gifts[Math.floor(Math.random() * gifts.length)];
     document.getElementById('result').innerText = "Выпал: " + randomGift;
   });
