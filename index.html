@@ -8,19 +8,12 @@
 <h1>Добро пожаловать в игру!</h1>
 <button id="open-case">Открыть кейс</button>
 <div id="result"></div>
-
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
-  const tg = window.Telegram.WebApp;
-  tg.expand();
-
   document.getElementById('open-case').addEventListener('click', () => {
     const gifts = ["Подарок 1", "Подарок 2", "Подарок 3"];
     const randomGift = gifts[Math.floor(Math.random() * gifts.length)];
     document.getElementById('result').innerText = "Выпал: " + randomGift;
   });
-
-  console.log("Информация о пользователе:", tg.initDataUnsafe.user);
 </script>
 </body>
 </html>
